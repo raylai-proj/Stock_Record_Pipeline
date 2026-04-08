@@ -1,5 +1,5 @@
 [project]
-name = "stock-record-pipeline"
+name = "stock_record_pipeline"
 version = "0.1.0"
 description = ""
 authors = [
@@ -14,7 +14,7 @@ dependencies = [
 packages = [{include = "stock_record_pipeline", from = "src"}]
 
 [tool.poetry.scripts]
-Stock_Record_Pipeline = "Stock_Record_Pipeline.main:main"
+stock_record_pipeline = "stock_record_pipeline.main:main"
 
 
 [tool.poetry.group.test.dependencies]
