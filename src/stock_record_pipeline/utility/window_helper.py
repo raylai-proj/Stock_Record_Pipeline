@@ -44,3 +44,7 @@ class Components(object):
     def on_submit(self):
         """Execute function when clicking submit button."""
         ACTDICT[self.dropdown.get()]()
+
+    def on_exit(self):
+        """Quit window when clicking exit button."""
+        self.window.quit()
