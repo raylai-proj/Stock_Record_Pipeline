@@ -43,6 +43,13 @@ class Components(object):
             values=list(ACTDICT.keys()),
             state="readonly",
         )
+        self.dropdown.grid(column=1, row=0, padx=PAD, pady=PAD, sticky="w")
+        self.dropdown.bind(
+            "<<ComboboxSelected>>",
+            lambda event: self.submit_btn.config(
+                state="normal" if self.dropdown.get() else "disabled"
+            ),
+        )
 
     def on_submit(self):
         """Execute function when clicking submit button."""
