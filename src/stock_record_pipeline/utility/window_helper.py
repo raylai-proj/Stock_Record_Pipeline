@@ -28,3 +28,10 @@ class Components(object):
         self.window = window
         self.label = ttk.Label(self.window, FONT, text="Select the Action:")
         self.label.grid(column=0, row=0, padx=PAD, pady=PAD, sticky="e")
+
+        self.dropdown = ttk.Combobox(
+            self.window,
+            font=FONT,
+            values=list(ACTDICT.keys()),
+            state="readonly",
+        )
