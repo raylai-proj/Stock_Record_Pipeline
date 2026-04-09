@@ -29,6 +29,11 @@ class Components(object):
         self.label = ttk.Label(self.window, FONT, text="Select the Action:")
         self.label.grid(column=0, row=0, padx=PAD, pady=PAD, sticky="e")
 
+        self.submit_btn = ttk.Button(
+            self.window, command=self.on_submit, text="Submit", state="disabled"
+        )
+        self.submit_btn.grid(column=0, row=2, padx=PAD, pady=PAD)
+
         self.dropdown = ttk.Combobox(
             self.window,
             font=FONT,
