@@ -35,3 +35,7 @@ class Components(object):
             values=list(ACTDICT.keys()),
             state="readonly",
         )
+
+    def on_submit(self):
+        """Execute function when clicking submit button."""
+        ACTDICT[self.dropdown.get()]()
