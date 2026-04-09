@@ -9,7 +9,13 @@ Chun-Juei Lai 04/09/2026
 
 from tkinter import ttk
 
-ACTDICT = {}
+
+def demo():
+    """Demo function for ACTDICT."""
+    print("demo")
+
+
+ACTDICT = {"test": demo}
 FONT = ("Arial", 12)
 PAD = 10
 
