@@ -34,6 +34,9 @@ class Components(object):
         )
         self.submit_btn.grid(column=0, row=2, padx=PAD, pady=PAD)
 
+        self.exit_btn = ttk.Button(self.window, command=self.on_exit, text="Exit")
+        self.exit_btn.grid(column=1, row=2, padx=PAD, pady=PAD)
+
         self.dropdown = ttk.Combobox(
             self.window,
             font=FONT,
