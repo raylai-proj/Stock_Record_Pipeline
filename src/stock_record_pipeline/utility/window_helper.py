@@ -34,7 +34,7 @@ class Components(object):
     def __init__(self, window):
         """Initialize Components object and create a window for data analysis task."""
         self.window = window
-        self.label = ttk.Label(self.window, FONT, text="Select the Action:")
+        self.label = ttk.Label(self.window, font=FONT, text="Select the Action:")
         self.label.grid(column=0, row=0, padx=PAD, pady=PAD, sticky="e")
 
         self.submit_btn = ttk.Button(
