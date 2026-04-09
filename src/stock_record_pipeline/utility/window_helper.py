@@ -4,6 +4,14 @@ Summary: window_helper.py creates a GUI for selecting and executing analysis act
 This module defines a Components class that builds a basic tkinter-based interface
 with a dropdown to choose miscellaneous options analyze data.
 
+Features:
+- Dropdown selection for data processing.
+- Submit and Exit buttons for executing and quiting.
+- Automatic enabling / disabling of the Submit button based on dropdown list selection.
+
+Classes:
+- Components: Encapsulates the entire UI layout and event handling logic.
+
 Chun-Juei Lai 04/09/2026
 """
 
