@@ -1,0 +1,68 @@
+"""
+Summary: window_helper.py creates a GUI for selecting and executing analysis actions.
+
+This module defines a Components class that builds a basic tkinter-based interface
+with a dropdown to choose miscellaneous options analyze data.
+
+Features:
+- Dropdown selection for data processing.
+- Submit and Exit buttons for executing and quiting.
+- Automatic enabling / disabling of the Submit button based on dropdown list selection.
+
+Classes:
+- Components: Encapsulates the entire UI layout and event handling logic.
+
+Chun-Juei Lai 04/09/2026
+"""
+
+from tkinter import ttk
+
+
+def demo():
+    """Demo function for ACTDICT."""
+    print("demo")
+
+
+ACTDICT = {"test": demo}
+FONT = ("Arial", 12)
+PAD = 10
+
+
+class Components(object):
+    """Components class initial a window to provide actions in data analysis task."""
+
+    def __init__(self, window):
+        """Initialize Components object and create a window for data analysis task."""
+        self.window = window
+        self.label = ttk.Label(self.window, FONT, text="Select the Action:")
+        self.label.grid(column=0, row=0, padx=PAD, pady=PAD, sticky="e")
+
+        self.submit_btn = ttk.Button(
+            self.window, command=self.on_submit, text="Submit", state="disabled"
+        )
+        self.submit_btn.grid(column=0, row=2, padx=PAD, pady=PAD)
+
+        self.exit_btn = ttk.Button(self.window, command=self.on_exit, text="Exit")
+        self.exit_btn.grid(column=1, row=2, padx=PAD, pady=PAD)
+
+        self.dropdown = ttk.Combobox(
+            self.window,
+            font=FONT,
+            values=list(ACTDICT.keys()),
+            state="readonly",
+        )
+        self.dropdown.grid(column=1, row=0, padx=PAD, pady=PAD, sticky="w")
+        self.dropdown.bind(
+            "<<ComboboxSelected>>",
+            lambda event: self.submit_btn.config(
+                state="normal" if self.dropdown.get() else "disabled"
+            ),
+        )
+
+    def on_submit(self):
+        """Execute function when clicking submit button."""
+        ACTDICT[self.dropdown.get()]()
+
+    def on_exit(self):
+        """Quit window when clicking exit button."""
+        self.window.quit()
